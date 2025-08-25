@@ -2,7 +2,7 @@ const db = require('../config/db');
 exports.buscarTodosPoliciais = (retorno) => {
     db.query('SELECT * FROM policiais', retorno);
 };
-exports.buscarPoliciaisPorId = (id, retorno) => {
+exports.buscarPolicialPorId = (id, retorno) => {
     db.query('SELECT * FROM policiais WHERE id = ?', [id], retorno);
 };
 

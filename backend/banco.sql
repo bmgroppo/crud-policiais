@@ -1,14 +1,23 @@
 CREATE DATABASE IF NOT EXISTS CRUD_policiais;
 USE CRUD_policiais;
 
+DROP TABLE IF EXISTS policiais; -- Apaga a tabela antiga se existir
+
 CREATE TABLE IF NOT EXISTS policiais (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    RG_civil VARCHAR(20) NOT NULL UNIQUE,
-    RG_militar VARCHAR(20) NOT NULL UNIQUE,
-    CPF VARCHAR(14) NOT NULL UNIQUE,
+    rg_civil VARCHAR(20) NOT NULL UNIQUE,
+    rg_militar VARCHAR(20) NOT NULL UNIQUE,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
     data_nascimento DATE NOT NULL,
-    matricula VARCHAR(255) NOT NULL
+    -- Usamos VARCHAR(255) para garantir que a matrícula criptografada caiba no campo.
+    matricula VARCHAR(255) NOT NULL 
 );
+
+-- Adicionando índices para otimizar as buscas, conforme solicitado
+CREATE INDEX idx_cpf ON policiais (cpf);
+CREATE INDEX idx_rg_civil ON policiais (rg_civil);
+CREATE INDEX idx_rg_militar ON policiais (rg_militar);
+
 
 -- Inserção de dados de exemplo para popular a tabela
 INSERT INTO policiais (RG_civil, RG_militar, CPF, data_nascimento, matricula) VALUES

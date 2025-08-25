@@ -17,5 +17,5 @@ exports.putPolicial = (id, policial, retorno) => {
 };
 
 exports.deletePolicial = (id, retorno) => {
-    repository.deletarPolicial(id, retorno);
+    repository.excluirPolicial(id, retorno);
 };

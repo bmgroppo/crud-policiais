@@ -7,11 +7,11 @@ exports.buscarPolicialPorId = (id, retorno) => {
 };
 
 exports.inserirPolicial = (policiais, retorno) => {
-    db.query('INSERT INTO policiais (rg_civil, rg_militar, CPF, data_nascimento, matricula) VALUES (?, ?, ?, ?, ?)', [policiais.rg_civil, policiais.rg_militar, policiais.CPF, policiais.data_nascimento, policiais.matricula], retorno);
+    db.query('INSERT INTO policiais (rg_civil, rg_militar, cpf, data_nascimento, matricula) VALUES (?, ?, ?, ?, ?)', [policiais.rg_civil, policiais.rg_militar, policiais.cpf, policiais.data_nascimento, policiais.matricula], retorno);
 };
 
 exports.atualizarPolicial = (id, policiais, retorno) => {
-    db.query('UPDATE policiais SET rg_civil = ?, rg_militar = ?, CPF = ?, data_nascimento = ?, matricula = ? WHERE id = ?', [policiais.rg_civil, policiais.rg_militar, policiais.CPF, policiais.data_nascimento, policiais.matricula, id], retorno);
+    db.query('UPDATE policiais SET rg_civil = ?, rg_militar = ?, cpf = ?, data_nascimento = ?, matricula = ? WHERE id = ?', [policiais.rg_civil, policiais.rg_militar, policiais.cpf, policiais.data_nascimento, policiais.matricula, id], retorno);
 };
 
 exports.excluirPolicial = (id, retorno) => {

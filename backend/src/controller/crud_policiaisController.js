@@ -25,7 +25,7 @@ exports.cadastrarPolicial = async (req, res) => {
     const policial = req.body;
     service.postPolicial(policial, (err, result) => {
         if (err) {
-            res.status(500).json({err: "Erro ao cadastrar o policial"})
+            res.status(500).json({err: "Erro ao cadastrar o policial", error: err})
         } else {
             res.status(201).json({message:"Policial cadastrado com sucesso!", id: result.insertId});
         }

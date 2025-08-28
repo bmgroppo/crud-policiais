@@ -94,8 +94,8 @@ crud-policiais/
 5. API disponível em: `http://localhost:3000`
 
 #### **Rotas Principais**
-- `POST /policiais` – Cadastra policial (com validação de CPF e criptografia da matrícula)
-- `GET /policiais` – Lista policiais (matrícula descriptografada, permite filtro por CPF/RG)
+- `POST /policiais` – Cadastra policial (com validação de cpf e criptografia da matrícula)
+- `GET /policiais` – Lista policiais (matrícula descriptografada, permite filtro por cpf/RG)
 
 ### **Frontend**
 
